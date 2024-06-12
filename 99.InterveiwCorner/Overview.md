@@ -71,3 +71,58 @@
    - **Mindset Shift:** Developers coming from garbage-collected languages need to adjust to Rust’s manual memory management model.
    Despite these challenges, Rust’s strong community support and comprehensive documentation help mitigate the learning difficulties.
 
+### Trick Interview Questions on the Overview of Rust
+
+Trick questions are designed to test deeper understanding and attention to detail. Here are some such questions about Rust, along with their answers:
+
+#### 1. **Can you change the value of an immutable variable in Rust?**
+   **Answer:** No, you cannot change the value of an immutable variable in Rust. Once a variable is declared as immutable with `let`, its value cannot be modified. To change the value, you must declare it as mutable with `let mut`.
+
+#### 2. **Is it possible to have a mutable reference to an immutable variable in Rust?**
+   **Answer:** No, it is not possible to have a mutable reference to an immutable variable in Rust. A mutable reference (`&mut`) can only be created if the variable itself is mutable (`let mut`).
+
+#### 3. **What happens if you call `clone` on a type that doesn’t implement the `Clone` trait?**
+   **Answer:** The code will fail to compile. In Rust, only types that implement the `Clone` trait can be cloned. If you try to call `clone` on a type that doesn’t implement `Clone`, the compiler will generate an error.
+
+#### 4. **Can you implement multiple traits for a single type in Rust?**
+   **Answer:** Yes, you can implement multiple traits for a single type in Rust. Rust allows you to implement any number of traits for a type, which provides flexibility and allows for the combination of different behaviors.
+
+#### 5. **Can you create a mutable reference from an immutable reference in Rust?**
+   **Answer:** No, you cannot create a mutable reference from an immutable reference. Rust's borrowing rules ensure that you cannot have a mutable reference if there are any immutable references to the same data.
+
+#### 6. **What happens if you try to use a variable after it has been moved?**
+   **Answer:** The code will fail to compile. In Rust, once a variable is moved, it is no longer valid. Any attempt to use the moved variable will result in a compile-time error.
+
+#### 7. **Is it possible to return a reference to a local variable from a function in Rust?**
+   **Answer:** No, it is not possible to return a reference to a local variable from a function in Rust. Doing so would result in a dangling reference because the local variable will be deallocated when the function returns. Rust's borrow checker prevents this to ensure safety.
+
+#### 8. **Can a struct in Rust contain a reference to another struct? If yes, what must be considered?**
+   **Answer:** Yes, a struct in Rust can contain a reference to another struct, but you must specify lifetimes to ensure that the references are valid as long as the struct is used. Lifetimes are a way to indicate how long references are valid to prevent dangling references.
+
+#### 9. **What will happen if you try to compile and run this code?**
+   ```rust
+   fn main() {
+       let x = String::from("hello");
+       let y = &x;
+       x.push_str(", world");
+       println!("{}", y);
+   }
+   ```
+   **Answer:** This code will fail to compile. The error occurs because you cannot mutate `x` while it has an immutable reference (`y`). The attempt to call `x.push_str(", world")` violates Rust's borrowing rules.
+
+#### 10. **Can you use the `Drop` trait to manually deallocate memory in Rust?**
+   **Answer:** No, you cannot use the `Drop` trait to manually deallocate memory. The `Drop` trait allows you to specify code that should run when an object goes out of scope, but it does not provide direct control over memory deallocation. Rust automatically calls the `Drop` implementation when the value goes out of scope.
+
+#### 11. **Is it possible to have a struct that contains itself in Rust?**
+   **Answer:** No, it is not possible to have a struct that directly contains itself because it would create an infinite size type. However, you can have a struct that contains a reference or a smart pointer to itself, such as using `Box` or `Rc`.
+
+#### 12. **What happens if you try to create a slice that goes out of the bounds of an array in Rust?**
+   **Answer:** The code will panic at runtime. Rust checks slice bounds at runtime, and if you try to create a slice that goes out of the bounds of an array, it will cause a panic to prevent accessing invalid memory.
+
+#### 13. **Explain what happens when you dereference a raw pointer in Rust.**
+   **Answer:** Dereferencing a raw pointer in Rust is an unsafe operation. You must use an `unsafe` block to do so, and it can lead to undefined behavior if the pointer is invalid or null. Raw pointers are not subject to Rust's borrowing rules and do not ensure memory safety.
+
+#### 14. **Can you implement a trait for a primitive type in Rust?**
+   **Answer:** Yes, you can implement a trait for a primitive type in Rust, but only if the trait is defined in the same crate as the implementation. This follows Rust's orphan rule, which prevents implementing foreign traits for foreign types.
+
+These trick questions aim to probe the candidate's knowledge of Rust's core principles and their ability to think critically about the language's safety and concurrency guarantees.
