@@ -77,9 +77,6 @@ Rust projects are managed by Cargo, Rust’s package manager and build system.
     Hello, Rust!
     ```
 
-### Diagram: Rust Project Structure
-
-![Rust Project Structure](https://via.placeholder.com/800x400?text=Rust+Project+Structure)
 
 ### Explanation of the Rust Project Structure
 
