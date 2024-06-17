@@ -163,7 +163,6 @@ With your project open in VS Code, you can build and run it to verify everything
     Hello, world!
     ```
 
-### Diagram: Rust Development Setup
 
 
 ### Final Notes
