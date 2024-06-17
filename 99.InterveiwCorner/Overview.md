@@ -125,4 +125,4 @@ Trick questions are designed to test deeper understanding and attention to detai
 #### 14. **Can you implement a trait for a primitive type in Rust?**
    **Answer:** Yes, you can implement a trait for a primitive type in Rust, but only if the trait is defined in the same crate as the implementation. This follows Rust's orphan rule, which prevents implementing foreign traits for foreign types.
 
-These trick questions aim to probe the candidate's knowledge of Rust's core principles and their ability to think critically about the language's safety and concurrency guarantees.
+These trick questions aim to probe the knowledge of Rust's core principles and their ability to think critically about the language's safety and concurrency guarantees.
