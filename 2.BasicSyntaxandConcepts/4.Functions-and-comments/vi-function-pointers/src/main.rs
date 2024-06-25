@@ -5,6 +5,8 @@ fn main() {
 
 }
 
-fn functionPointerDemo(f:Fn(msg:&str)) {
+fn functionPointerDemo<F>(f:&dyn Fn) 
+where F: Fn(&str)
+{
     f("Hello! this demo function");
 }
