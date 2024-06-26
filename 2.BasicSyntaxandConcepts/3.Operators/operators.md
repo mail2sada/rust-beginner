@@ -61,7 +61,7 @@ Logical operators are used to combine multiple boolean expressions.
 | Operator | Description         | Example           |
 |----------|---------------------|-------------------|
 | `&&`     | Logical AND         | `true && false` (false) |
-| `||`     | Logical OR          | `true || false` (true)  |
+| `\|\|`     | Logical OR          | `true \|\| false` (true)  |
 | `!`      | Logical NOT         | `!true` (false)         |
 
 **Example:**
@@ -82,7 +82,7 @@ Bitwise operators are used to perform operations on individual bits of integers.
 | Operator | Description         | Example              |
 |----------|---------------------|----------------------|
 | `&`      | Bitwise AND         | `5 & 3` (1)          |
-| `|`      | Bitwise OR          | `5 | 3` (7)          |
+| `\|`      | Bitwise OR          | `5 \| 3` (7)          |
 | `^`      | Bitwise XOR         | `5 ^ 3` (6)          |
 | `<<`     | Left shift          | `1 << 2` (4)         |
 | `>>`     | Right shift         | `4 >> 2` (1)         |
